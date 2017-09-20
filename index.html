@@ -80,8 +80,7 @@
                  </div>
                  <div class="col-xs-12 col-sm-2" >
                     <p style="padding:20px;"></p>
-                    <a class="btn btn-warning btn-block" data-toggle="tooltip" data-html="true"  title="Or Call us at  <br><strong>+852 12345678</strong>"
-                     data-placement="bottom" href="#form">Reserve Table</a>
+                    <a class="btn btn-warning btn-block" data-toggle="modal" data-target="#reserveModal">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -89,7 +88,64 @@
     <ol class="col-12 breadcrumb">
          <li class="breadcrumb-item active">Home</li>
      </ol>
+<div id="reserveModal" class="modal fade" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Reserve a Table</h4>
+      </div>
+      <div class="modal-body">
+        <form class="horizontal" role="form">
+          <div class="form-group col-sm-10">
+           <label class="col-sm-3 control-label">Number of Guests</label>
+           <label class="radio-inline"><input name="guests" type="radio" value=""> 1 </label>
+           <label class="radio-inline"><input name="guests" type="radio" value=""> 2 </label>
+           <label class="radio-inline"><input name="guests" type="radio" value=""> 3 </label>
+           <label class="radio-inline"><input name="guests" type="radio" value=""> 4 </label>
+           <label class="radio-inline"><input name="guests" type="radio" value=""> 5 </label>
+           <label class="radio-inline"><input name="guests" type="radio" value=""> 6 </label>
+          </div>
+          <div class="form-group col-sm-10">
+           <label for="section" class="col-sm-3 control-label">Section</label>
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-success active">
+            <input type="radio" name="options" id="nonSmoking" autocomplete="off" checked> non-smoking
+            </label>
+            <label class="btn btn-danger">
+            <input type="radio" name="options" id="smoking" autocomplete="off"> smoking
+            </label>
+          </div>
+        </div>
 
+
+          <div class="form-group col-sm-10">
+            <label for="date" class="col-sm-3 control-label">Date and Time</label>
+            <label class="col-sm-3 has-feedback">
+               <input type="text" class="form-control" id="date" placeholder="Date">
+               <i class="glyphicon glyphicon-calendar form-control-feedback"></i>
+            </label>
+            <label class="col-sm-3 col-sm-push-1 has-feedback">
+               <input type="text" class="form-control" id="time" placeholder="Time">
+               <i class="glyphicon glyphicon-time form-control-feedback"></i>
+            </label>
+            </div>
+            <div class="form-group col-sm-12 col-sm-push-2">
+            <a class="btn btn-primary" type="submit" href="#">Reserve</a>
+            <button type="button" class="btn btn-primary"
+                data-dismiss="modal">Cancel</button>
+            </div>
+            <div class="alert alert-warning alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>Warning!</strong> please  <a href="#" class="alert-link" id="callAlertLink">call</a> us to reserve for more than six people .
+                  </div>
+                   </form>
+                </div>
+       <div class="modal-footer">
+
+       </div>
+    </div>
+  </div>
+</div>
     <div class='container'>
       <div class="row row-content">
         <div class="col">
@@ -197,46 +253,7 @@
 
         </div>
     </div>
-    <div class='row row-content' id="form">
-    <div class="col-12">
-     <div class="card">
-         <h3 class="card-header bg-primary text-white">Reserve a Table</h3>
-         <div class="card-block">
-           <div class="col-12">
-             <form class="horizontal" role="form">
-               <div class="form-group col-sm-10">
-                    <label class="col-sm-3 control-label">Number of Guests</label>
-                        <label class="radio-inline"><input name="guests" type="radio" value=""> 1 </label>
-                        <label class="radio-inline"><input name="guests" type="radio" value=""> 2 </label>
-                        <label class="radio-inline"><input name="guests" type="radio" value=""> 3 </label>
-                        <label class="radio-inline"><input name="guests" type="radio" value=""> 4 </label>
-                        <label class="radio-inline"><input name="guests" type="radio" value=""> 5 </label>
-                        <label class="radio-inline"><input name="guests" type="radio" value=""> 6 </label>
-                </div>
-  <div class="form-group col-sm-10">
-    <label for="date" class="col-sm-3 control-label">Date and Time</label>
-    <label class="col-sm-3 has-feedback">
-        <input type="text" class="form-control" id="date" placeholder="Date">
-        <i class="glyphicon glyphicon-calendar form-control-feedback"></i>
-    </label>
-    <label class="col-sm-3 col-sm-push-1 has-feedback">
-        <input type="text" class="form-control" id="time" placeholder="Time">
-        <i class="glyphicon glyphicon-time form-control-feedback"></i>
-    </label>
-</div>
-<div class="form-group col-sm-10 col-sm-push-2">
-    <a class="btn btn-primary" type="submit" href="#">Reserve</a>
-</div>
-<div class="col-sm-12 alert alert-warning alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <p><strong>Warning:</strong> Please <a href="tel:85212345678" class="alert-link">call</a> us to reserve for more than six guests</p>
-</div>
-</form>
- </div>
-         </div>
-     </div>
-    </div>
-  </div>
+
     <footer>
         <div class='container'>
             <div class="row footer">
@@ -285,11 +302,6 @@
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/tether/dist/js/tether.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-    $(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();
-     });
-</script>
 </body>
 
 </html>
